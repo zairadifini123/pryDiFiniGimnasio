@@ -34,8 +34,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(634, 450);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "frmGimnasio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmGimnasio";
             ResumeLayout(false);
         }
