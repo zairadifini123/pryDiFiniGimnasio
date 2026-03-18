@@ -41,8 +41,6 @@
             lblAltura = new Label();
             txtAñoEntrenando = new TextBox();
             lblAñosEntrenando = new Label();
-            btnCalcular = new Button();
-            btnClasificar = new Button();
             btnMostrar = new Button();
             btnSalir = new Button();
             lstMostrar = new ListBox();
@@ -73,10 +71,11 @@
             // mskDni
             // 
             mskDni.Location = new Point(101, 64);
-            mskDni.Mask = "00-000-000";
+            mskDni.Mask = "00000000";
             mskDni.Name = "mskDni";
             mskDni.Size = new Size(100, 23);
             mskDni.TabIndex = 2;
+            mskDni.KeyPress += mskDni_KeyPress;
             // 
             // lblNombre
             // 
@@ -129,6 +128,7 @@
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(100, 23);
             txtPeso.TabIndex = 8;
+            txtPeso.KeyPress += txtPeso_KeyPress;
             // 
             // txtAltura
             // 
@@ -136,6 +136,7 @@
             txtAltura.Name = "txtAltura";
             txtAltura.Size = new Size(100, 23);
             txtAltura.TabIndex = 10;
+            txtAltura.KeyPress += txtAltura_KeyPress;
             // 
             // lblAltura
             // 
@@ -152,6 +153,7 @@
             txtAñoEntrenando.Name = "txtAñoEntrenando";
             txtAñoEntrenando.Size = new Size(100, 23);
             txtAñoEntrenando.TabIndex = 12;
+            txtAñoEntrenando.KeyPress += txtAñoEntrenando_KeyPress;
             // 
             // lblAñosEntrenando
             // 
@@ -162,44 +164,27 @@
             lblAñosEntrenando.TabIndex = 11;
             lblAñosEntrenando.Text = "Años entrenando";
             // 
-            // btnCalcular
-            // 
-            btnCalcular.Location = new Point(374, 246);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(100, 23);
-            btnCalcular.TabIndex = 13;
-            btnCalcular.Text = "Calcular IMC";
-            btnCalcular.UseVisualStyleBackColor = true;
-            // 
-            // btnClasificar
-            // 
-            btnClasificar.Location = new Point(268, 246);
-            btnClasificar.Name = "btnClasificar";
-            btnClasificar.Size = new Size(100, 23);
-            btnClasificar.TabIndex = 14;
-            btnClasificar.Text = "Clasificar";
-            btnClasificar.UseVisualStyleBackColor = true;
-            // 
             // btnMostrar
             // 
-            btnMostrar.Location = new Point(162, 246);
+            btnMostrar.Location = new Point(315, 244);
             btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(100, 23);
+            btnMostrar.Size = new Size(164, 23);
             btnMostrar.TabIndex = 15;
             btnMostrar.Text = "Mostrar";
             btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrar.Click += btnMostrar_Click;
             // 
             // btnSalir
             // 
             btnSalir.BackColor = Color.Firebrick;
             btnSalir.ForeColor = Color.Black;
-            btnSalir.Location = new Point(12, 292);
+            btnSalir.Location = new Point(12, 244);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(144, 23);
+            btnSalir.Size = new Size(164, 23);
             btnSalir.TabIndex = 16;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
-            btnSalir.Click += this.btnSalir_Click;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lstMostrar
             // 
@@ -237,8 +222,6 @@
             Controls.Add(lstMostrar);
             Controls.Add(btnSalir);
             Controls.Add(btnMostrar);
-            Controls.Add(btnClasificar);
-            Controls.Add(btnCalcular);
             Controls.Add(txtAñoEntrenando);
             Controls.Add(lblAñosEntrenando);
             Controls.Add(txtAltura);
@@ -276,8 +259,6 @@
         private Label lblAltura;
         private TextBox txtAñoEntrenando;
         private Label lblAñosEntrenando;
-        private Button btnCalcular;
-        private Button btnClasificar;
         private Button btnMostrar;
         private Button btnSalir;
         private ListBox lstMostrar;
